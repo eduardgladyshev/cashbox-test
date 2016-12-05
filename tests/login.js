@@ -1,6 +1,7 @@
 'use strict';
 
 let loginPage = require('../pageObjects/login.page');
+let bobbinsPage = require('../pageObjects/bobbins.page'); 
 let assert = require("assert");
 
 describe('login to cashbox', ()=>{
@@ -19,12 +20,12 @@ describe('login to cashbox', ()=>{
 	it('insert password and login', ()=>{
 		loginPage.password.setValue('Shpluha42');
 		loginPage.submit.click();
-		browser.waitForVisible('.Bobbins__container___1-4Pu', 5000);
 	});
 
 	it('select bobin', ()=>{
-		browser.click('.Bobbins__bobbinListItem___1XhZg');
-		$('button*=Начать').click();
+		bobbinsPage.bobbinItem.waitForVisible(5000);
+		bobbinsPage.bobbinItem.click();
+		bobbinsPage.submit.click();
 
 		browser.waitForVisible('.Dashboard__columnContainer___3wFpR', 5000);
 	});
@@ -33,7 +34,3 @@ describe('login to cashbox', ()=>{
 });
 
 
-
-
-
-// });

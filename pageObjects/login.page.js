@@ -2,37 +2,25 @@
 
 let Page = require('./page');
 
-console.log(`require: ${Page}`);
+class LoginPage extends Page{
 
-
-let LoginPage = Object.create(Page, {
-	userName: {
-		get: function(){
-			return $('[data-type="email"]');
-		}
-	},
-
-	userCard: {
-		get: function(){
-			return $('.Card__item___3D5fR');
-		}
-	},
-
-	password: {
-		get: function(){
-			return $('[type="password"]');
-		}
-	},
-
-	submit: {
-		get: function(){
-			return $('.keyboard-submit-button');
-		}
+	get userName() {
+		return $('[data-type="email"]');
 	}
 
-});
+	get userCard() {
+		return $('.Card__item___3D5fR');
+	}
 
+	get password() {
+		return $('[type="password"]');
+	}
 
-console.log("LoginPage");
+	get submit() {
+		return $('.keyboard-submit-button');
 
-module.exports = LoginPage;
+	}
+
+};
+
+module.exports = new LoginPage();
