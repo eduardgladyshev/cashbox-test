@@ -2,6 +2,7 @@
 
 let loginPage = require('../pageObjects/login.page');
 let bobbinsPage = require('../pageObjects/bobbins.page'); 
+let dashboard = require('../pageObjects/dashboard.page');
 let assert = require("assert");
 
 describe('login to cashbox', ()=>{
@@ -12,7 +13,7 @@ describe('login to cashbox', ()=>{
 
 	it('select user', ()=>{
 		loginPage.userName.setValue('тест');
-		loginPage.userCard.waitForVisible(10000);
+		loginPage.userCard.waitForVisible(5000);
 		loginPage.userCard.click();
 		loginPage.password.waitForVisible(5000);
 	});
@@ -26,8 +27,12 @@ describe('login to cashbox', ()=>{
 		bobbinsPage.bobbinItem.waitForVisible(5000);
 		bobbinsPage.bobbinItem.click();
 		bobbinsPage.submit.click();
+	});
 
-		browser.waitForVisible('.Dashboard__columnContainer___3wFpR', 5000);
+	it('logout with session end', ()=>{
+		dashboard.wrapper.waitForVisible(5000);
+		dashboard.exitPopupBtn.click();
+		dashboard.sessionEnd.click();
 	});
 	
 
