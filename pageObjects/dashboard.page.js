@@ -8,7 +8,7 @@ class Dashboard{
 
 	get exit() { return $('button*=Выйти'); }
 
-	get wrapper() { return $('.Dashboard__columnContainer___3wFpR'); }
+	get container() { return $('.Dashboard__columnContainer___3wFpR'); }
 
 	get newOrder() { return $('button=Новый заказ'); }
 

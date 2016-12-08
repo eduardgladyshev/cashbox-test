@@ -3,6 +3,7 @@
 let loginPage = require('../pageObjects/login.page');
 let bobbinsPage = require('../pageObjects/bobbins.page'); 
 let dashboard = require('../pageObjects/dashboard.page');
+let orderPage = require('../pageObjects/order.page');
 let assert = require("assert");
 
 describe('login to cashbox', ()=>{
@@ -29,12 +30,23 @@ describe('login to cashbox', ()=>{
 		bobbinsPage.submit.click();
 	});
 
+	it('open new order', ()=>{
+		dashboard.container.waitForVisible(5000);
+		dashboard.newOrder.click();
+		orderPage.container.waitForVisible(5000);
+	});
+
+	it('close newOrder', ()=>{
+		console.log(orderPage.cancelOrder);
+		orderPage.cancelOrder.click();
+		orderPage.confirmCancelOrder.click();
+	});
+
 	it('logout with session end', ()=>{
-		dashboard.wrapper.waitForVisible(5000);
+		dashboard.container.waitForVisible(5000);
 		dashboard.exitPopupBtn.click();
 		dashboard.sessionEnd.click();
 	});
-	
 
 });
 
