@@ -6,7 +6,11 @@ class Page {
 	}
 
 	open (path) {
-		browser.url('/' + path);
+		browser.url(`/${path? path: ''}`);
+	}
+
+	back() {
+		$('button=Назад').click();
 	}
 }
 
