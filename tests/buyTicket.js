@@ -4,7 +4,7 @@ let dashboard = require('../pageObjects/dashboard.page');
 let orderPage = require('../pageObjects/order.page');
 let hallPage = require('../pageObjects/hall.page');
 let assert = require("assert");
-require('./loginHelper');
+require('../helpers/loginHelpers');
 
 describe('Buy ticket: \n', ()=>{
 
