@@ -17,6 +17,7 @@ describe('Buy ticket: \n', ()=>{
 	it('choose release', ()=>{
 		$('.ReleasesListItem__seance___2Lk_6').click();
 		let releaseTitle = $('.ReleaseSeances__title___1-VTe').getText();
+		console.log(releaseTitle);
 		$('.SeancesListItem__seance___2GT0C').click();
 	});
 
