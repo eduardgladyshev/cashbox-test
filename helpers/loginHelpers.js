@@ -9,21 +9,20 @@ before('login to cashbox', ()=> {
 	loginPage.open();
 
 	loginPage.userName.setValue('тест');
-	loginPage.userCard.waitForVisible(5000);
+	loginPage.userCard.waitForVisible();
 	loginPage.userCard.click();
-	loginPage.password.waitForVisible(5000);
+	loginPage.password.waitForVisible();
 
 	loginPage.password.setValue('Shpluha42');
 	loginPage.submit.click();
 
-	bobbinsPage.bobbinItem.waitForVisible(5000);
+	bobbinsPage.bobbinItem.waitForVisible();
 	bobbinsPage.bobbinItem.click();
 	bobbinsPage.submit.click();
-
+	dashboard.container.waitForVisible();
 });
 
 after('logout from cashbox', () => {
-	dashboard.container.waitForVisible(5000);
-	dashboard.exitPopupBtn.click();
-	dashboard.sessionEnd.click();
+	dashboard.container.waitForVisible();
+	dashboard.sessionEnd();
 });
