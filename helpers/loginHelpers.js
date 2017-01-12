@@ -1,10 +1,13 @@
 'use strict';
 
+// let webdriver = require('webdriverio');
 let loginPage = require('../pageObjects/login.page');
 let dashboard = require('../pageObjects/dashboard.page');
 let bobbinsPage = require('../pageObjects/bobbins.page'); 
 
 before('login to cashbox', ()=> {
+
+	
 
 	loginPage.open();
 

@@ -1,0 +1,25 @@
+{
+  "name": "cashbox-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "open.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha open.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardgladyshev/cashbox-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardgladyshev/cashbox-test/issues"
+  },
+  "homepage": "https://github.com/eduardgladyshev/cashbox-test#readme",
+  "dependencies": {
+    "webdriverio": "^4.6.1"
+  }
+}
